@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 public class ThirdPersonTacz
 {
     public static final String MOD_ID = "tacz_leawindtps_compat";
+    public static final Logger LOGGER = LogUtils.getLogger();
+
 
     public ThirdPersonTacz()
     {

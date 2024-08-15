@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "fun.teamti.tacztps.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "tacz_leawindtps_compat.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "client.MixinTaczRenderCrosshairEvent"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
