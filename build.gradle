@@ -166,9 +166,9 @@ dependencies {
         jarJar.ranged(it, "[3.6.1,)")
     }
 
-    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
-    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.1")) {
-        jarJar.ranged(it, "[0.4.1,)")
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0-beta.2"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0-beta.2")) {
+        jarJar.ranged(it, "[0.5.0-beta.2,)")
     }
 
     // LuaJ 库，将 lua 脚本语言引入用于控制枪械的逻辑和动画状态机
