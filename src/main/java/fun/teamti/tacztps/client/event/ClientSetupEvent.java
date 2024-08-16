@@ -1,6 +1,7 @@
-package fun.teamti.tacztps.client;
+package fun.teamti.tacztps.client.event;
 
 import fun.teamti.tacztps.ThirdPersonTacz;
+import fun.teamti.tacztps.client.LeawindCompat;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -11,10 +12,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         value = {Dist.CLIENT},
         modid = ThirdPersonTacz.MOD_ID
 )
-public class EventSubscriber {
+public class ClientSetupEvent {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(LeawindCompat::init);
     }
 }
-

@@ -9,7 +9,8 @@
   ],
   "client": [
     "client.MixinTaczRenderCrosshairEvent",
-    "client.MixinTaczRenderCrosshairEvent$showCrosshairThirdPerson"
+    "client.MixinTaczRenderCrosshairEvent$ShowCrosshairThirdPerson",
+    "client.MixinTickAnimationEvent"
   ],
   "injectors": {
     "defaultRequire": 1
