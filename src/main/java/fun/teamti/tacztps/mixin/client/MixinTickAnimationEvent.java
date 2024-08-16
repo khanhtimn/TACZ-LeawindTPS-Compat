@@ -6,7 +6,7 @@ import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.api.item.attachment.AttachmentType;
 import com.tacz.guns.client.event.TickAnimationEvent;
 import com.tacz.guns.client.resource.index.ClientGunIndex;
-import net.leawind.mc.api.base.GameStatus;
+import fun.teamti.tacztps.client.LeawindCompat;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -28,7 +28,7 @@ public class MixinTickAnimationEvent {
         ResourceLocation scopeId = iGun.getAttachmentId(mainhandItem, AttachmentType.SCOPE);
         if (clientGunOperator.isAim()) {
             if (!DefaultAssets.isEmptyAttachmentId(scopeId)) {
-                GameStatus.isPerspectiveInverted = true;
+                LeawindCompat.switchFirstPerson();
             }
         }
     }

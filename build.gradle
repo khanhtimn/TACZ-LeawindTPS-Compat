@@ -181,18 +181,13 @@ dependencies {
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    //compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    //compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    //runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     implementation "com.github.MCModderAnchor:TACZ:${tacz_version}"
     implementation fg.deobf("maven.modrinth:leawind-third-person:${leawind_tps_version}")
-    implementation fg.deobf("maven.modrinth:architectury-api:${architectury_version}")
-
-    //Xenon
-    runtimeOnly fg.deobf("maven.modrinth:xenon-forge:${xenon_version}")
-    //Oculus
-    runtimeOnly fg.deobf("maven.modrinth:oculus:${oculus_version}")
+    runtimeOnly fg.deobf("maven.modrinth:architectury-api:${architectury_version}")
 
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

@@ -1,5 +1,6 @@
 package fun.teamti.tacztps.client;
 
+import net.leawind.mc.api.base.GameStatus;
 import net.leawind.mc.thirdperson.ThirdPersonStatus;
 import net.minecraftforge.fml.ModList;
 
@@ -18,4 +19,9 @@ public class LeawindCompat {
         return false;
     }
 
+    public static void switchFirstPerson() {
+        if(INSTALLED) {
+            GameStatus.isPerspectiveInverted = true;;
+        }
+    }
 }
