@@ -8,9 +8,10 @@
   "mixins": [
   ],
   "client": [
-    "client.MixinTaczRenderCrosshairEvent",
-    "client.MixinTaczRenderCrosshairEvent$ShowCrosshairThirdPerson",
-    "client.MixinTickAnimationEvent"
+    "client.MixinRenderCrosshairEvent",
+    "client.MixinRenderCrosshairEvent$ShowCrosshairThirdPerson",
+    "client.MixinTickAnimationEvent",
+    "client.MixinCameraSetupEvent"
   ],
   "injectors": {
     "defaultRequire": 1

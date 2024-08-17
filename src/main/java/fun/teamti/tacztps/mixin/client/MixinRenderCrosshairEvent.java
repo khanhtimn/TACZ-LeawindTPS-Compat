@@ -10,8 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = RenderCrosshairEvent.class, remap = false)
-public class MixinTaczRenderCrosshairEvent {
-
+public class MixinRenderCrosshairEvent {
 
     @ModifyExpressionValue(
             method = "renderCrosshair",
@@ -28,7 +27,6 @@ public class MixinTaczRenderCrosshairEvent {
     private static float forceShowCrosshairWhenAim(float oldValue) {
         return ThirdPersonStatus.shouldRenderThirdPersonCrosshair() ? 0 : oldValue;
     }
-
 
     @Mixin(value = GunAnimationStateMachine.class, remap = false)
     public static class ShowCrosshairThirdPerson {

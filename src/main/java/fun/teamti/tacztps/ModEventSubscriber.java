@@ -1,31 +1,39 @@
-package fun.teamti.tacztps.client.event;
+package fun.teamti.tacztps;
 
-import com.tacz.guns.api.DefaultAssets;
-import com.tacz.guns.api.TimelessAPI;
-import com.tacz.guns.api.client.gameplay.IClientPlayerGunOperator;
-import com.tacz.guns.api.item.IGun;
-import com.tacz.guns.api.item.attachment.AttachmentType;
-import com.tacz.guns.client.animation.statemachine.GunAnimationStateMachine;
-import fun.teamti.tacztps.ThirdPersonTacz;
-import net.leawind.mc.api.base.GameStatus;
+import com.tacz.guns.client.event.CameraSetupEvent;
+import net.leawind.mc.thirdperson.ThirdPerson;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.client.event.ViewportEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+
 @Mod.EventBusSubscriber(
-        value = {Dist.CLIENT},
+        value = Dist.CLIENT,
         modid = ThirdPersonTacz.MOD_ID
 )
-public class TickAnimationEvent {
+public class ModEventSubscriber {
 
-//    @SubscribeEvent()
-//    public static void switchToFirstPerson(TickEvent.ClientTickEvent event) {
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public static void onCameraRotateThirdPerson(ViewportEvent.ComputeCameraAngles event) {
+        LocalPlayer player = Minecraft.getInstance().player;
+        if (player != null) {
+            float xr = player.getXRot();
+            float yr = player.getYRot();
+            CameraSetupEvent.applyCameraRecoil(event);
+            float drx = player.getXRot() - xr;
+            float dry = player.getYRot() - yr;
+            player.setXRot(xr);
+            player.setYRot(yr);
+            ThirdPerson.CAMERA_AGENT.turnCamera(dry, drx);
+        }
+    }
+
+    //    @SubscribeEvent()
+//    public static void onScopeSwitchFirstPerson(TickEvent.ClientTickEvent event) {
 //        LocalPlayer player = Minecraft.getInstance().player;
 //        if (player != null) {
 //            IClientPlayerGunOperator clientGunOperator = IClientPlayerGunOperator.fromLocalPlayer(player);
