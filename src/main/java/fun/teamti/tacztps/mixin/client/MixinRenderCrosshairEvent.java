@@ -14,7 +14,7 @@ public class MixinRenderCrosshairEvent {
 
     @ModifyExpressionValue(
             method = "renderCrosshair",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/CameraType;isFirstPerson()Z")
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/CameraType;isFirstPerson()Z", remap = true)
     )
     private static boolean modifyCrosshairVisibilityCheck(boolean original) {
         return original || ThirdPersonStatus.shouldRenderThirdPersonCrosshair();
