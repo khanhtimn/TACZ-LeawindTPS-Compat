@@ -1,31 +1,30 @@
 name: Build
 on:
-    push:
-      branches: [ "master" ]
-    pull_request:
-      branches: [ "master" ]
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-         - name: Checkout
-           uses: actions/checkout@v3
-        
-         - uses: actions/setup-java@v4
-           with:
-             distribution: 'temurin'
-             java-version: '17'
-         
-         - name: Setup Gradle
-           uses: gradle/gradle-build-action@v3
-            
-         - name: Build JAR
-           run: |
-              gradle build
-         - uses: actions/upload-artifact@v4
-           with:
-              name: tacz_leawindtps_compat
-              path: build/libs/*.jar
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-           
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+
+      - name: Build JAR
+        run: |
+          gradle build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tacz_leawindtps_compat
+          path: build/libs/*.jar
