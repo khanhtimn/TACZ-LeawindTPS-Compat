@@ -1,8 +1,8 @@
 package fun.teamti.tacztps.mixin.client;
 
 import com.tacz.guns.client.event.CameraSetupEvent;
-import net.leawind.mc.thirdperson.ThirdPerson;
-import net.leawind.mc.thirdperson.ThirdPersonStatus;
+import com.github.leawind.thirdperson.ThirdPerson;
+import com.github.leawind.thirdperson.ThirdPersonStatus;
 import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import org.spongepowered.asm.mixin.Mixin;

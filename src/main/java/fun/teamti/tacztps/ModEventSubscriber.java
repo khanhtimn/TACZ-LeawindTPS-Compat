@@ -1,7 +1,7 @@
 package fun.teamti.tacztps;
 
 import com.tacz.guns.client.event.CameraSetupEvent;
-import net.leawind.mc.thirdperson.ThirdPerson;
+import com.github.leawind.thirdperson.ThirdPerson;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -10,11 +10,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-
-@Mod.EventBusSubscriber(
-        value = Dist.CLIENT,
-        modid = ThirdPersonTacz.MOD_ID
-)
+@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = ThirdPersonTacz.MOD_ID)
 public class ModEventSubscriber {
 
     @SubscribeEvent(priority = EventPriority.LOW)
@@ -32,27 +28,31 @@ public class ModEventSubscriber {
         }
     }
 
-    //    @SubscribeEvent()
-//    public static void onScopeSwitchFirstPerson(TickEvent.ClientTickEvent event) {
-//        LocalPlayer player = Minecraft.getInstance().player;
-//        if (player != null) {
-//            IClientPlayerGunOperator clientGunOperator = IClientPlayerGunOperator.fromLocalPlayer(player);
-//            ItemStack mainhandItem = player.getMainHandItem();
-//            Item var5 = mainhandItem.getItem();
-//            if (var5 instanceof IGun iGun) {
-//                ResourceLocation var6 = iGun.getGunId(mainhandItem);
-//                ResourceLocation scopeId = iGun.getAttachmentId(mainhandItem, AttachmentType.SCOPE);
-//                TimelessAPI.getClientGunIndex(var6).ifPresent((gunIndex) -> {
-//                    GunAnimationStateMachine animationStateMachine = gunIndex.getAnimationStateMachine();
-//                    if (animationStateMachine != null) {
-//                        if(clientGunOperator.isAim()) {
-//                            if (!DefaultAssets.isEmptyAttachmentId(scopeId)) {
-//                                GameStatus.isPerspectiveInverted = true;
-//                            }
-//                        }
-//                    }
-//                });
-//            }
-//        }
-//    }
+    // @SubscribeEvent()
+    // public static void onScopeSwitchFirstPerson(TickEvent.ClientTickEvent event)
+    // {
+    // LocalPlayer player = Minecraft.getInstance().player;
+    // if (player != null) {
+    // IClientPlayerGunOperator clientGunOperator =
+    // IClientPlayerGunOperator.fromLocalPlayer(player);
+    // ItemStack mainhandItem = player.getMainHandItem();
+    // Item var5 = mainhandItem.getItem();
+    // if (var5 instanceof IGun iGun) {
+    // ResourceLocation var6 = iGun.getGunId(mainhandItem);
+    // ResourceLocation scopeId = iGun.getAttachmentId(mainhandItem,
+    // AttachmentType.SCOPE);
+    // TimelessAPI.getClientGunIndex(var6).ifPresent((gunIndex) -> {
+    // GunAnimationStateMachine animationStateMachine =
+    // gunIndex.getAnimationStateMachine();
+    // if (animationStateMachine != null) {
+    // if(clientGunOperator.isAim()) {
+    // if (!DefaultAssets.isEmptyAttachmentId(scopeId)) {
+    // GameStatus.isPerspectiveInverted = true;
+    // }
+    // }
+    // }
+    // });
+    // }
+    // }
+    // }
 }

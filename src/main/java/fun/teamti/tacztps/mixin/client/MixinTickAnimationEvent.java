@@ -7,7 +7,7 @@ import com.tacz.guns.api.item.attachment.AttachmentType;
 import com.tacz.guns.client.event.TickAnimationEvent;
 import com.tacz.guns.client.resource.index.ClientGunIndex;
 import fun.teamti.tacztps.ClientConfig;
-import net.leawind.mc.api.base.GameStatus;
+import com.github.leawind.api.base.GameStatus;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
